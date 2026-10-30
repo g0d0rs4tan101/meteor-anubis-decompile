@@ -1,0 +1,69 @@
+Summary for /home/hjr/Downloads/anubis/Anubis_Beta_0_9_9_1.jar
+Decompiled with CFR 0.152
+
+
+net.fabric.vgxu_lwymi_capgk
+----------------------------
+
+PwGMXZtE()
+  Could not resolve type clashes
+dzEr()
+  Could not resolve type clashes
+kzZpom()
+  Could not resolve type clashes
+
+
+net.anubis.client.gui.HudEmblem
+----------------------------
+
+load()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 2 blocks at once
+
+
+net.anubis.client.gui.ThemeImages
+----------------------------
+
+decode(byte[] java.lang.String boolean int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [6[TRYBLOCK]], but top level block is 17[DOLOOP]
+
+
+net.anubis.client.gui.mainmenu.MenuTextures
+----------------------------
+
+decode(byte[] java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 2 blocks at once
+
+
+net.anubis.client.module.impl.render.HeadCosmeticModule
+----------------------------
+
+isFriend(net.minecraft.class_310 int )
+  Unable to fully structure code
+
+
+net.anubis.client.module.impl.render.character.CharacterModule
+----------------------------
+
+isFriend(net.minecraft.class_310 int )
+  Unable to fully structure code
+
+
+net.anubis.client.module.impl.render.character.CustomCharacters
+----------------------------
+
+decode(byte[] )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 2 blocks at once
+
+
+net.anubis.client.module.impl.render.character.gltf.CharacterBake
+----------------------------
+
+uvBounds(net.anubis.client.module.impl.render.character.gltf.PosedMesh java.util.List<net.anubis.client.module.impl.render.character.gltf.CharacterBake$Piece> )
+  Exception : java.lang.UnsupportedOperationException
+
+
+net.anubis.client.util.spotify.AlbumArt
+----------------------------
+
+decode(byte[] int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 4 blocks at once

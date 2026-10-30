@@ -1,0 +1,41 @@
+/*
+ * Decompiled with CFR 0.152.
+ * 
+ * Could not load the following classes:
+ *  com.llamalad7.mixinextras.injector.wrapoperation.Operation
+ *  com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation
+ *  com.llamalad7.mixinextras.sugar.Local
+ *  io.netty.bootstrap.AbstractBootstrap
+ *  io.netty.bootstrap.Bootstrap
+ *  io.netty.channel.ChannelHandler
+ *  net.fabricmc.api.EnvType
+ *  net.fabricmc.api.Environment
+ *  net.minecraft.class_2535
+ *  org.spongepowered.asm.mixin.Mixin
+ *  org.spongepowered.asm.mixin.injection.At
+ */
+package com.example.client.mixin;
+
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.sugar.Local;
+import io.netty.bootstrap.AbstractBootstrap;
+import io.netty.bootstrap.Bootstrap;
+import io.netty.channel.ChannelHandler;
+import java.net.InetSocketAddress;
+import net.anubis.client.proxy.ProxyRouting;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.minecraft.class_2535;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+
+@Environment(value=EnvType.CLIENT)
+@Mixin(value={class_2535.class})
+public abstract class MixinProxyConnection {
+    @WrapOperation(method={"method_52271"}, at={@At(value="INVOKE", target="Lio/netty/bootstrap/Bootstrap;handler(Lio/netty/channel/ChannelHandler;)Lio/netty/bootstrap/AbstractBootstrap;")})
+    private static AbstractBootstrap<?, ?> anubis$routeThroughProxy(Bootstrap bootstrap, ChannelHandler initializer, Operation<AbstractBootstrap<?, ?>> original, @Local(argsOnly=true) InetSocketAddress target) {
+        return (AbstractBootstrap)original.call(new Object[]{bootstrap, ProxyRouting.route(target, initializer)});
+    }
+}
+
